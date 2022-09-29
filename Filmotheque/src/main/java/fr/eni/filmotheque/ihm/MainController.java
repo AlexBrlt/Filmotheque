@@ -15,13 +15,12 @@ import fr.eni.filmotheque.sercives.FilmService;
 public class MainController {
 		
 	private FilmService filmService;
-	
+
 	@RequestMapping
 	public String main() {
 		System.out.println("blabla");
 		return "accueil";
 	}
-	
 	
 	public MainController(FilmService filmService) {
 		this.filmService = filmService;

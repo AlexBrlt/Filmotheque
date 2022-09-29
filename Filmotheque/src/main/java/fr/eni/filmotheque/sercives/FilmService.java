@@ -7,5 +7,4 @@ import fr.eni.filmotheque.bo.Film;
 public interface FilmService {
 	public List<Film>getListeFilms();
 
-
 }
