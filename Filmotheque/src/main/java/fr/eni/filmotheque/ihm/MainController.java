@@ -13,13 +13,7 @@ import fr.eni.filmotheque.bo.Film;
 @RequestMapping("/accueil")
 public class MainController {
 	
-	private List<Film> listeFilms;
-	
-	@Autowired
-	@Qualifier("listeFilms")
-	public void setListeFilms(List<Film> listeFilms) {
-		this.listeFilms = listeFilms;
-	}
+
 	
 	@RequestMapping
 	public String main() {
