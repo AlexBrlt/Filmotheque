@@ -6,6 +6,37 @@
 </head>
 <body>
 <h1>Films :</h1>
+<form th:action="@{/accueil}" th:object=${film} method="post">
+  <label for="titreInput">Titre : </label>
+  <input type="text" th:field="*{titre}" id="titreInput" />
+  <label for="anneeInput">Année : </label>
+  <input type="number" th:field="*{annee}" id="anneeInput" />
+  <label for="dureeInput">Durée : </label>
+  <input type="number" th:field="*{duree}" id="dureeInput" />
+  <label for="synopsisInput">Synopsis : </label>
+  <input type="text" th:field="*{synopsis}" id="synopsisInput" />
+  
+<!--    <label for="metierInput" >Métier :</label> -->
+<!--   <select class="form-select col-3"  th:field="*{metier}" required> -->
+<!--           <option th:each="metier: ${@metiers}" -->
+<!--           th:value="${metier.id}" th:text="${metier.libelle}"></option> -->
+<!--   </select>    -->
+  <button type="submit">Dire Hello</button>
+</form>
+
+
+
+<h1>Liste des personnes :</h1>
+    <table>
+        <tr class="theader"><td>Nom</td><td>Age</td><td>Metier</td></tr>
+        <tr th:each="pers: ${personnes}">
+            <td th:text="${pers.prenom}" />
+            <td th:text="${pers.age}" />
+            <td th:text="${pers.metier.libelle}"></td>                         
+        </tr>
+    </table>
+</body>
+</html>
 
 </body>
 </html>

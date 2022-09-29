@@ -24,8 +24,8 @@ public class ListeFilmServiceImpl implements FilmService {
 
 	@Override
 	public List<Film> getListeFilms() {
-		// TODO Auto-generated method stub
 		return listeFilms;
 	}
+
 
 }
