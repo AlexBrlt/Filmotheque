@@ -1,6 +1,11 @@
 package fr.eni.filmotheque.sercives;
 
+import java.util.List;
+
+import fr.eni.filmotheque.bo.Film;
+
 public interface FilmService {
-	String listeFilm();
+	public List<Film>getListeFilms();
+
 
 }

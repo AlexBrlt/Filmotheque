@@ -7,13 +7,15 @@ import org.springframework.stereotype.Service;
 
 import fr.eni.filmotheque.bo.Film;
 
-@Service("FilmService")
-public class ListeFilmController implements FilmService {
+
+@Service
+public class ListeFilmServiceImpl implements FilmService {
 
 	private List<Film> listeFilms;
 
-	public ListeFilmController() {
+	public ListeFilmServiceImpl() {
 		listeFilms = new ArrayList();
+		listeFilms.add(new Film(1, "Batman", 2004, 180, "Blablabla"));
 	}
 
 	public void setListeFilms(List<Film> listeFilms) {
@@ -22,7 +24,6 @@ public class ListeFilmController implements FilmService {
 
 	@Override
 	public String listeFilm() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
