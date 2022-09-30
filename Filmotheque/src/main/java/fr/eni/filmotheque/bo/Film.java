@@ -1,8 +1,14 @@
 package fr.eni.filmotheque.bo;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+
 public class Film {
+	
 	private int id;
+	@NotBlank(message="Le champ est obligatoire !")
 	private String titre;
+	@Min(0)
 	private int annee;
 	private int duree;
 	private String synopsis;

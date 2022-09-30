@@ -5,36 +5,86 @@
 <title>Accueil</title>
 </head>
 <body>
-<h1>Films :</h1>
-<form th:action="@{/accueil}" th:object=${film} method="post">
-  <label for="titreInput">Titre : </label>
-  <input type="text" th:field="*{titre}" id="titreInput" />
-  <label for="anneeInput">Année : </label>
-  <input type="number" th:field="*{annee}" id="anneeInput" />
-  <label for="dureeInput">Durée : </label>
-  <input type="number" th:field="*{duree}" id="dureeInput" />
-  <label for="synopsisInput">Synopsis : </label>
-  <input type="text" th:field="*{synopsis}" id="synopsisInput" />
-  
-<!--    <label for="metierInput" >Métier :</label> -->
-<!--   <select class="form-select col-3"  th:field="*{metier}" required> -->
-<!--           <option th:each="metier: ${@metiers}" -->
-<!--           th:value="${metier.id}" th:text="${metier.libelle}"></option> -->
-<!--   </select>    -->
-  <button type="submit">Ajouter</button>
-</form>
+	<h1>Films :</h1>
+
+	<form th:action="@{/ajout}" th:object=${film} method="post">
+
+		<div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">
+			<p th:text="#{accueil.erreurs}">Message d'erreur</p>
+		</div>
+
+		<div class="form-group row">
+			<label for="titreInput" class="offset-1 col-2">Titre : </label> 
+			<input type="text" th:field="*{titre}" id="titreInput" class="col-3" /> <span
+				class="text-danger col-6" th:if="${#fields.hasErrors('titre')}">
+				<ul>
+					<li th:each="erreur: ${#fields.errors('titre')}"
+						th:text="${erreur}"></li>
+				</ul>
+			</span>
+		</div>
+		<div class="form-group row">
+			<label for="anneeInput" class="offset-1 col-2">Année : </label> <input
+				type="number" th:field="*{annee}" id="anneeInput" class="col-3" /> <span
+				class="text-danger col-6" th:if="${#fields.hasErrors('annee')}">
+				<ul>
+					<li th:each="erreur: ${#fields.errors('annee')}" th:text="${erreur}"></li>
+				</ul>
+			</span>
+		</div>
+		<div class="form-group row">
+			<label for="dureeInput" class="offset-1 col-2">Durée : </label> <input
+				type="number" th:field="*{duree}" id="dureeInput" class="col-3" /> <span
+				class="text-danger col-6" th:if="${#fields.hasErrors('duree')}">
+				<ul>
+					<li th:each="erreur: ${#fields.errors('duree')}"
+						th:text="${erreur}"></li>
+				</ul>
+			</span>
+		</div>
+		<div class="form-group row">
+			<label for="synopsisInput" class="offset-1 col-2">Synopsis : </label> <input type="text" th:field="*{synopsis}"
+				id="synopsisInput" class="col-3" /> <span
+				class="text-danger col-6" th:if="${#fields.hasErrors('synopsis')}">
+				<ul>
+					<li th:each="erreur: ${#fields.errors('synopsis')}"
+						th:text="${erreur}"></li>
+				</ul>
+			</span>
+		</div>
+		
+		<button type="submit" class="btn btn-default col-4 offset-4">Ajouter
+			le film</button>
+	</form>
 
 
 
-<!-- <h1>Liste des personnes :</h1> -->
-<!--     <table> -->
-<!--         <tr class="theader"><td>Nom</td><td>Age</td><td>Metier</td></tr> -->
-<!--         <tr th:each="pers: ${personnes}"> -->
-<!--             <td th:text="${pers.prenom}" /> -->
-<!--             <td th:text="${pers.age}" /> -->
-<!--             <td th:text="${pers.metier.libelle}"></td>                          -->
-<!--         </tr> -->
-<!--     </table> -->
+
+
+<!--  <form th:action="@{/accueil}" th:object=${film} method="post"> -->
+<!-- 	   <label for="titreInput">Titre : </label>  -->
+<!-- 	  <input type="text" th:field="*{titre}" id="titreInput" />  -->
+<!-- 	  <label for="anneeInput">Année : </label>  -->
+<!-- 	  <input type="number" th:field="*{annee}" id="anneeInput" />  -->
+<!-- 	   <label for="dureeInput">Durée : </label>  -->
+<!-- 	   <input type="number" th:field="*{duree}" id="dureeInput" />  -->
+<!-- 	   <label for="synopsisInput">Synopsis : </label>  -->
+<!-- 	  <input type="text" th:field="*{synopsis}" id="synopsisInput" />  -->
+
+<!--    <button type="submit">Ajouter</button>  -->
+<!-- 	</form>  -->
+
+
+
+	<!-- <h1>Liste des personnes :</h1> -->
+	<!--     <table> -->
+	<!--         <tr class="theader"><td>Nom</td><td>Age</td><td>Metier</td></tr> -->
+	<!--         <tr th:each="pers: ${personnes}"> -->
+	<!--             <td th:text="${pers.prenom}" /> -->
+	<!--             <td th:text="${pers.age}" /> -->
+	<!--             <td th:text="${pers.metier.libelle}"></td>                          -->
+	<!--         </tr> -->
+	<!--     </table> -->
 </body>
 </html>
 
