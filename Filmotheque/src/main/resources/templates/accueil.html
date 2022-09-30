@@ -21,20 +21,20 @@
 <!--           <option th:each="metier: ${@metiers}" -->
 <!--           th:value="${metier.id}" th:text="${metier.libelle}"></option> -->
 <!--   </select>    -->
-  <button type="submit">Dire Hello</button>
+  <button type="submit">Ajouter</button>
 </form>
 
 
 
-<h1>Liste des personnes :</h1>
-    <table>
-        <tr class="theader"><td>Nom</td><td>Age</td><td>Metier</td></tr>
-        <tr th:each="pers: ${personnes}">
-            <td th:text="${pers.prenom}" />
-            <td th:text="${pers.age}" />
-            <td th:text="${pers.metier.libelle}"></td>                         
-        </tr>
-    </table>
+<!-- <h1>Liste des personnes :</h1> -->
+<!--     <table> -->
+<!--         <tr class="theader"><td>Nom</td><td>Age</td><td>Metier</td></tr> -->
+<!--         <tr th:each="pers: ${personnes}"> -->
+<!--             <td th:text="${pers.prenom}" /> -->
+<!--             <td th:text="${pers.age}" /> -->
+<!--             <td th:text="${pers.metier.libelle}"></td>                          -->
+<!--         </tr> -->
+<!--     </table> -->
 </body>
 </html>
 
